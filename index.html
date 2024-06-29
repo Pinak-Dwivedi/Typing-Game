@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./images/favicon.ico" type="image/x-icon" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./images/favicon-16x16.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./images/apple-touch-icon.png"
+    />
+
+    <title>Typing Game</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./js/script.js" type="module"></script>
+  </head>
+  <body>
+    <h1 class="heading">Typing Game</h1>
+
+    <div class="container game-container hide" data-game-container>
+      <div class="timer" data-timer></div>
+
+      <div class="passage-text" data-passage-text></div>
+
+      <form class="form" data-typing-form>
+        <textarea name="typed-text" rows="10" class="form-textarea"></textarea>
+      </form>
+    </div>
+
+    <dialog class="dialog" data-dialog>
+      <form class="form" data-dialog-form>
+        <div class="form-field">
+          <label for="time" class="form-label">Time</label>
+          <select name="time" id="time" class="form-select"></select>
+        </div>
+
+        <div class="form-field">
+          <label for="passage" class="form-label">Passage</label>
+          <select name="passage" id="passage" class="form-select"></select>
+        </div>
+
+        <button type="submit" class="form-button">Start</button>
+      </form>
+    </dialog>
+
+    <div class="container score-container hide" data-score-container>
+      <div class="score-field">
+        <span class="score-label">Words Per Minute</span>
+        <span class="score-value" data-words-per-minute></span>
+      </div>
+      <div class="score-field">
+        <span class="score-label">Accuracy</span>
+        <span class="score-value" data-accuracy></span>
+      </div>
+      <div class="score-field">
+        <span class="score-label">Correct Words Count</span>
+        <span class="score-value" data-correct-words></span>
+      </div>
+      <div class="score-field">
+        <span class="score-label">Wrong Words Count</span>
+        <span class="score-value" data-wrong-words></span>
+      </div>
+
+      <button class="reset-game-button" data-reset-game-button>
+        Reset Game
+      </button>
+    </div>
+  </body>
+</html>

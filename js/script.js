@@ -29,16 +29,22 @@ typingElement.addEventListener("input", (e) => {
   startTimer(Number(timeSelectBox.value) * 60);
   scrollToWord();
   addMoreParagraph();
+
+  if (e.data === " ") {
+    const words = e.target.value.split(/[\s\n]/);
+    const wordBeforeSpace = words.at(-2);
+
+    checkTypedWord(wordBeforeSpace + " ");
+    updateActiveWord();
+  }
 });
 
 typingElement.addEventListener("keydown", (e) => {
-  if (e.key === " " || e.key === "Enter") {
+  if (e.key === "Enter") {
     const words = e.target.value.split(/[\s\n]/);
     const lastword = words.at(-1);
 
-    if (e.key === "Enter") checkTypedWord(lastword);
-    else checkTypedWord(lastword + " ");
-
+    checkTypedWord(lastword);
     updateActiveWord();
   }
 });

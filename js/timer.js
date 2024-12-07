@@ -45,7 +45,11 @@ function getWordsPerMinute() {
 }
 
 function getAccuracy() {
-  return ((getCorrectWordsCount() / getTypedWordsCount()) * 100).toFixed(2);
+  const typedWordsCount = getTypedWordsCount();
+
+  if (typedWordsCount === 0) return 0;
+
+  return ((getCorrectWordsCount() / typedWordsCount) * 100).toFixed(2);
 }
 
 export function resetTimer() {
